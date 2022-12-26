@@ -13,5 +13,5 @@ public interface Repository {
     List<Member> findAll(); //회원정보 모두출력
 
     //Coupon domain 관련 구현 repository
-    Coupon saveCoupon(Coupon coupon); // 쿠폰 남은 개수 저장
+    Optional<Integer> saveCoupon(Coupon coupon); // 쿠폰 남은 개수 저장
 }

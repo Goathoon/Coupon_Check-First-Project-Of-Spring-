@@ -37,7 +37,15 @@ public class MemoryRepository implements Repository{
     }
 
     @Override
-    public Coupon saveCoupon(Coupon coupon) {
-        return null;
+    public Optional<Integer> saveCoupon(Coupon coupon) {
+        coupon.setNum();
+        Optional<Integer> returnVal = Optional.ofNullable(coupon.getNum());
+        if (returnVal.isPresent()){
+            return Optional.ofNullable(coupon.getNum());
+        }
+        else{
+            System.err.println("쿠폰수가 0장입니다.");
+            return Optional.ofNullable(coupon.getNum());
+        }
     }
 }
