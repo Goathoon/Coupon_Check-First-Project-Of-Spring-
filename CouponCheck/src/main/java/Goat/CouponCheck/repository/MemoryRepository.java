@@ -1,7 +1,7 @@
 package Goat.CouponCheck.repository;
 
-import hello.hellospring.domain.Coupon;
-import hello.hellospring.domain.Member;
+import Goat.CouponCheck.domain.Coupon;
+import Goat.CouponCheck.domain.Member;
 
 import java.util.*;
 

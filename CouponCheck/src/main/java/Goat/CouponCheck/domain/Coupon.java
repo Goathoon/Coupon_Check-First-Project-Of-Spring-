@@ -1,4 +1,4 @@
-package hello.hellospring.domain;
+package Goat.CouponCheck.domain;
 
 public class Coupon {
     static Integer num = 10; //초기 쿠폰 수 10개로 설정.

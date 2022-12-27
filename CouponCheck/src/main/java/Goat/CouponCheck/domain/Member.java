@@ -1,4 +1,4 @@
-package hello.hellospring.domain;
+package Goat.CouponCheck.domain;
 
 public class Member {
 
