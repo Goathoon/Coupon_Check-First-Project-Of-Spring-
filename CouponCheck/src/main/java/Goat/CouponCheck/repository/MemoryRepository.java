@@ -48,4 +48,7 @@ public class MemoryRepository implements Repository{
             return Optional.ofNullable(coupon.getNum());
         }
     }
+    public void clearStore(){
+        store.clear();
+    }
 }
