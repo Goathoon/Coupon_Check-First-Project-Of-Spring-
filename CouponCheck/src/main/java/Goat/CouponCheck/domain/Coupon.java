@@ -1,7 +1,7 @@
 package hello.hellospring.domain;
 
 public class Coupon {
-    private Integer num = 10; //초기 쿠폰 수 10개로 설정.
+    static Integer num = 10; //초기 쿠폰 수 10개로 설정.
 
     public Integer getNum() {
         return num;
