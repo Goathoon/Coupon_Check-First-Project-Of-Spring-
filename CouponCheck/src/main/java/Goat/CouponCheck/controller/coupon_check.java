@@ -1,6 +1,5 @@
 package Goat.CouponCheck.controller;
 
-import Goat.CouponCheck.domain.Coupon;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,13 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class coupon_check {
-
-    @GetMapping("/")
-    public String check(Model model) {
-        Coupon coupon = new Coupon();
-        model.addAttribute("data", coupon.getNum());
-        return "coupon";
-    }
 
     @GetMapping("login")
     public String login(@RequestParam(value = "data") String string, Model model) {
