@@ -1,10 +1,10 @@
 package repository;
 
 import Goat.CouponCheck.repository.MemoryRepository;
-import hello.hellospring.domain.Member;
+import Goat.CouponCheck.domain.Member;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import hello.hellospring.domain.Coupon;
+import Goat.CouponCheck.domain.Coupon;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,7 +19,7 @@ public class MemoryRepositoryTest {
 
     @Test
     public void save(){
-        hello.hellospring.domain.Member member = new Member();
+        Member member = new Member();
         member.setName("goat");
 
         repository.saveMember(member);
