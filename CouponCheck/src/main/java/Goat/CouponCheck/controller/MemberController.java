@@ -54,7 +54,6 @@ public class MemberController {
     @GetMapping("/coupon-update")
     public String memberCoupon(Model model, Coupon coupon){
         coupon.setNum();
-        model.addAttribute("memberName",)
         model.addAttribute("data",coupon.getNum());
         return "coupon-login";
     }
