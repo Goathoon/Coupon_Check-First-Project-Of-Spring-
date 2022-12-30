@@ -14,4 +14,5 @@ public interface Repository {
 
     //Coupon domain 관련 구현 repository
     Optional<Integer> saveCoupon(Coupon coupon); // 쿠폰 남은 개수 저장
+    Integer updateMember(Member member,Coupon coupopn); //회원별 받은 쿠폰 번호 저장
 }

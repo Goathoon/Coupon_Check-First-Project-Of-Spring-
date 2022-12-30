@@ -48,6 +48,12 @@ public class MemoryRepository implements Repository{
             return Optional.ofNullable(coupon.getNum());
         }
     }
+
+    @Override
+    public Integer updateMember(Member member, Coupon coupopn) {
+        return null;
+    }
+
     public void clearStore(){
         store.clear();
     }
