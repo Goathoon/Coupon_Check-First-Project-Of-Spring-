@@ -1,28 +1,23 @@
 package Goat.CouponCheck.service;
 
+import Goat.CouponCheck.CouponCheckApplication;
 import Goat.CouponCheck.domain.Member;
-import Goat.CouponCheck.repository.MemoryRepository;
+import Goat.CouponCheck.repository.Repository;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class MemberServiceTest {
-
-    MemberService memberService;
-    MemoryRepository memoryRepository;
-
-    @BeforeEach
-    public void beforeEach(){
-        memoryRepository =  new MemoryRepository();
-        memberService = new MemberService(memoryRepository);
-    }
-    @AfterEach
-    public void afterEach(){
-        memoryRepository.clearStore();
-    }
+@SpringBootTest
+@Transactional
+@ContextConfiguration(classes= CouponCheckApplication.class)
+public class MemberServiceIntegrationTest {
+    @Autowired MemberService memberService;
+    @Autowired Repository repository;
     @Test
     void join() {
         //given
@@ -31,7 +26,7 @@ class MemberServiceTest {
         //when
         Long saveId = memberService.join(member);
         //then
-        Member findMember = memberService.findOne(member.getId()).get(); //Optional로 반환되는거 get으로 member를 꺼냄
+        Member findMember = repository.findById(saveId).get(); //Optional로 반환되는거 get으로 member를 꺼냄
         Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
     }
 

@@ -20,7 +20,7 @@ public class MemberService {
     public Long join(Member member){
         //중복회원 방지
         validateDuplicateMember(member);
-        repository.saveMember(member);
+        repository.save(member);
         return member.getId();
     }
 

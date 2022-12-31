@@ -1,9 +1,15 @@
 package Goat.CouponCheck.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Member {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; //임의의 값, 데이터 구분을 위함.
+    @Column(name="name")
     private String name;
+    @Column(name="coupon")
     private Integer couponNum;
     public Long getId() {
         return id;

@@ -22,7 +22,7 @@ public class MemoryRepositoryTest {
         Member member = new Member();
         member.setName("goat");
 
-        repository.saveMember(member);
+        repository.save(member);
         Member result = repository.findById(member.getId()).get();
 
         //Assertions.assertEquals(member,result);
@@ -33,11 +33,11 @@ public class MemoryRepositoryTest {
     public void findByName(){
         Member member1 = new Member();
         member1.setName("hoon1");
-        repository.saveMember(member1);
+        repository.save(member1);
 
         Member member2 = new Member();
         member2.setName("hoon2");
-        repository.saveMember(member2);
+        repository.save(member2);
 
         Member result = repository.findByName("hoon1").get();
 
@@ -49,11 +49,11 @@ public class MemoryRepositoryTest {
     public void findAll(){
         Member member1 = new Member();
         member1.setName("hoon1");
-        repository.saveMember(member1);
+        repository.save(member1);
 
         Member member2 = new Member();
         member2.setName("hoon2");
-        repository.saveMember(member2);
+        repository.save(member2);
 
         List<Member> result = repository.findAll();
 

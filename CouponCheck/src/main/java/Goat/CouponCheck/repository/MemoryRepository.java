@@ -12,7 +12,7 @@ public class MemoryRepository implements Repository{
     private static long sequence = 0L;
 
     @Override
-    public Member saveMember(Member member) {
+    public Member save(Member member) {
         member.setId(++sequence);
         member.setCouponNum(0); //초기에는 쿠폰을 발급받지 않았으므로 0으로 set
         store.put(member.getId(),member);
@@ -49,10 +49,6 @@ public class MemoryRepository implements Repository{
         }
     }
 
-    @Override
-    public Integer updateMember(Member member, Coupon coupopn) {
-        return null;
-    }
 
     public void clearStore(){
         store.clear();
